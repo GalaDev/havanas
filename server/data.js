@@ -48,7 +48,7 @@ const data = {
     {
       _id: 6,
       name: 'Vertigo Silver Lighter',
-      category: 'cigars',
+      category: 'lighters',
       image: '/images/silver-vertigo.png',
       brand: 'Vertigo',
       price: 20,
