@@ -3,7 +3,9 @@ import './App.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
-import data from './data';
+import CigarsPage from './pages/categories/CigarsPage';
+import LightersPage from './pages/categories/LightersPage';
+import WrappersPage from './pages/categories/WrappersPage';
 
 function App() {
   return (
@@ -33,10 +35,20 @@ function App() {
           </div>
         </header>
         <main className='main'>
-          <h2>Featured Products</h2>
           <div className='content'>
             <Route path='/product/:id' component={ProductPage}></Route>
             <Route path='/' exact={true} component={HomePage}></Route>
+            <Route path='/cigars' exact={true} component={CigarsPage}></Route>
+            <Route
+              path='/lighters'
+              exact={true}
+              component={LightersPage}
+            ></Route>
+            <Route
+              path='/wrappers'
+              exact={true}
+              component={WrappersPage}
+            ></Route>
           </div>
         </main>
         <footer className='footer'>All rights reserved</footer>
