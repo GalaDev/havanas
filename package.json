@@ -1,0 +1,19 @@
+{
+  "name": "havanas",
+  "version": "1.0.0",
+  "description": "one stop cigar shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalaDev/havanas.git"
+  },
+  "author": "Andy Gala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalaDev/havanas/issues"
+  },
+  "homepage": "https://github.com/GalaDev/havanas#readme"
+}
