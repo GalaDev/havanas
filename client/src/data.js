@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: 1,
       name: 'ACID Blondie',
       category: 'cigars',
       image: '/images/acid-blondie_6.png',
@@ -9,6 +10,7 @@ const data = {
       rank: 1,
     },
     {
+      _id: 2,
       name: 'Alec Bradley Seconds',
       category: 'cigars',
       image: '/images/alec-bradley.png',
@@ -17,6 +19,7 @@ const data = {
       rank: 2,
     },
     {
+      _id: 3,
       name: 'ACID Buba Kuba',
       category: 'cigars',
       image: '/images/acid-buba.png',
@@ -25,6 +28,7 @@ const data = {
       rank: 3,
     },
     {
+      _id: 4,
       name: 'ACID Ripcord',
       category: 'cigars',
       image: '/images/acid-rip-cord.png',
@@ -33,6 +37,7 @@ const data = {
       rank: 4,
     },
     {
+      _id: 5,
       name: 'Vertigo Black Lighter',
       category: 'lighters',
       image: '/images/vertigo.jpeg',
@@ -41,6 +46,7 @@ const data = {
       rank: 5,
     },
     {
+      _id: 6,
       name: 'Vertigo Silver Lighter',
       category: 'cigars',
       image: '/images/silver-vertigo.png',
@@ -49,6 +55,7 @@ const data = {
       rank: 6,
     },
     {
+      _id: 7,
       name: 'Single Jet Burgundy',
       category: 'lighters',
       image: '/images/bl-singlejet.jpeg',
@@ -57,6 +64,7 @@ const data = {
       rank: 7,
     },
     {
+      _id: 8,
       name: 'CT Filler',
       category: 'wrappers',
       image: '/images/ct-wrapper.jpg',
@@ -65,6 +73,7 @@ const data = {
       rank: 8,
     },
     {
+      _id: 9,
       name: 'LL Filler',
       category: 'wrappers',
       image: '/images/ll-spread.jpg',
@@ -73,6 +82,7 @@ const data = {
       rank: 9,
     },
     {
+      _id: 10,
       name: 'VA Brightleaf',
       category: 'wrappers',
       image: '/images/va-brightleaf.jpg',

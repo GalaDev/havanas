@@ -11,20 +11,20 @@ function App() {
       <div className='grid-container'>
         <header className='header'>
           <div className='brand'>
-            <a href='index.html'>Havanas</a>
+            <Link to='/'>Havanas</Link>
           </div>
           <div className='header-links'>
             <div className='categories'>
               <button className='dropbtn'>Categories</button>
               <div className='categories-content'>
                 <li className='cigars'>
-                  <a href='#'>Cigars</a>
+                  <Link to='/cigars'>Cigars</Link>
                 </li>
                 <li className='lighters'>
-                  <a href='#'>Lighters</a>
+                  <Link to='/lighters'>Lighters</Link>
                 </li>
                 <li className='wrappers'>
-                  <a href='#'>Wrappers</a>
+                  <Link to='/wrappers'>Wrappers</Link>
                 </li>
               </div>
             </div>
@@ -37,27 +37,6 @@ function App() {
           <div className='content'>
             <Route path='/product/:id' component={ProductPage}></Route>
             <Route path='/' exact={true} component={HomePage}></Route>
-            <ul className='products'>
-              {data.products.map(
-                (product) =>
-                  product.rank < 5 && (
-                    <li>
-                      <div className='product'>
-                        <img
-                          className='product-image'
-                          src={product.image}
-                          alt={product.name}
-                        />
-                        <div className='product-name'>
-                          <a href='product.html'>{product.name}</a>
-                        </div>
-                        <div className='product-brand'>{product.brand}</div>
-                        <div className='product-price'>${product.price}</div>
-                      </div>
-                    </li>
-                  )
-              )}
-            </ul>
           </div>
         </main>
         <footer className='footer'>All rights reserved</footer>
