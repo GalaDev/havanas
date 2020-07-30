@@ -1,8 +1,14 @@
 const express = require('express');
 const data = require('./data');
+const connectDB = require('../database/db');
+//routes
+const userRoute = require('./routes/userRoute');
 
 const app = express();
 app.use(express.json({ extended: false }));
+connectDB();
+
+app.use('/api/users', userRoute);
 
 app.get('/api/products/:id', (req, res) => {
   const productId = req.params.id;

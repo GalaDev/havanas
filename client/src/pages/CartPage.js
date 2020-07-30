@@ -95,7 +95,7 @@ const CartPage = (props) => {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div>Cart is Empty</div>
       )}
     </div>
   );
