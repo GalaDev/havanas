@@ -1,3 +1,6 @@
+const text =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco';
+
 const data = {
   products: [
     {
@@ -8,6 +11,8 @@ const data = {
       brand: 'ACID Cigars',
       price: 20,
       rank: 1,
+      description: text,
+      stock: 10,
     },
     {
       _id: 2,
@@ -17,6 +22,8 @@ const data = {
       brand: 'Alec Bradley Cigars',
       price: 30,
       rank: 2,
+      description: text,
+      stock: 10,
     },
     {
       _id: 3,
@@ -26,6 +33,8 @@ const data = {
       brand: 'ACID Cigars',
       price: 15,
       rank: 3,
+      description: text,
+      stock: 10,
     },
     {
       _id: 4,
@@ -35,6 +44,8 @@ const data = {
       brand: 'ACID Cigars',
       price: 50,
       rank: 4,
+      description: text,
+      stock: 10,
     },
     {
       _id: 5,
@@ -44,6 +55,8 @@ const data = {
       brand: 'Vertigo',
       price: 10,
       rank: 5,
+      description: text,
+      stock: 10,
     },
     {
       _id: 6,
@@ -53,6 +66,8 @@ const data = {
       brand: 'Vertigo',
       price: 20,
       rank: 6,
+      description: text,
+      stock: 10,
     },
     {
       _id: 7,
@@ -62,6 +77,8 @@ const data = {
       brand: 'Black Label',
       price: 15,
       rank: 7,
+      description: text,
+      stock: 10,
     },
     {
       _id: 8,
@@ -71,6 +88,8 @@ const data = {
       brand: 'CT Leaves',
       price: 17,
       rank: 8,
+      description: text,
+      stock: 10,
     },
     {
       _id: 9,
@@ -80,6 +99,8 @@ const data = {
       brand: 'LL Leaves',
       price: 23,
       rank: 9,
+      description: text,
+      stock: 10,
     },
     {
       _id: 10,
@@ -89,6 +110,8 @@ const data = {
       brand: 'VA Leaves',
       price: 19,
       rank: 10,
+      description: text,
+      stock: 10,
     },
   ],
 };
