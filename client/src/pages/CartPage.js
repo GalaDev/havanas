@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../actions/cartActions';
 import { detailsProduct } from '../actions/productActions';
+import { removeFromCart } from '../actions/cartActions';
 
 const CartPage = (props) => {
   const cart = useSelector((state) => state.cart);
@@ -17,6 +18,13 @@ const CartPage = (props) => {
     : 1;
 
   const dispatch = useDispatch();
+  const removeFromCartHandler = (productId) => {
+    dispatch(removeFromCart(productId));
+  };
+
+  const checkoutHandler = () => {
+    props.history.push('/signin?redirect=shipping');
+  };
 
   useEffect(() => {
     if (productId) {
@@ -41,21 +49,32 @@ const CartPage = (props) => {
           </div>
           <div className='cart-list'>
             <ul className='cart-list-container'>
+              <br />
               <li>
                 <h3>Shopping Cart</h3>
                 <div>Price:</div>
               </li>
+
               {cartItems.length === 0 ? (
-                <div>Cart is Empty</div>
+                <li>Cart is Empty</li>
               ) : (
                 cartItems.map((item) => (
-                  <div>
-                    <img src={item.image} alt={item.name} />
+                  <li>
+                    <div className='cart-image'>
+                      <img src={item.image} alt={item.name} />
+                    </div>
                     <div className='cart-name'>
                       <div>{item.name}</div>
                     </div>
-                    ${item.price}
-                  </div>
+                    <div className='cart-price'>${item.price}</div>
+                    <button
+                      type='button'
+                      className='button'
+                      onClick={() => removeFromCartHandler(item.product)}
+                    >
+                      Remove
+                    </button>
+                  </li>
                 ))
               )}
             </ul>
@@ -68,6 +87,7 @@ const CartPage = (props) => {
             </h3>
             <button
               className='button primary'
+              onClick={checkoutHandler}
               disabled={cartItems.length === 0}
             >
               Proceed to Checkout
