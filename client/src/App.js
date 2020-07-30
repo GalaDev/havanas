@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
+import CartPage from './pages/CartPage';
 import CigarsPage from './pages/categories/CigarsPage';
 import LightersPage from './pages/categories/LightersPage';
 import WrappersPage from './pages/categories/WrappersPage';
@@ -49,6 +50,7 @@ function App() {
               exact={true}
               component={WrappersPage}
             ></Route>
+            <Route path='/cart/:id?' exact={true} component={CartPage}></Route>
           </div>
         </main>
         <footer className='footer'>All rights reserved</footer>
