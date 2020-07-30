@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -7,8 +7,21 @@ import CartPage from './pages/CartPage';
 import CigarsPage from './pages/categories/CigarsPage';
 import LightersPage from './pages/categories/LightersPage';
 import WrappersPage from './pages/categories/WrappersPage';
+import { useSelector, useDispatch } from 'react-redux';
+import { CART_REMOVE_ITEM } from './constants/cartConstants';
 
 function App() {
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+  console.log(cartItems);
+
+  const cartDataFunc = (cartItems) => {
+    if (cartItems.length) {
+      return cartItems[0].product;
+    }
+    return 0;
+  };
+
   return (
     <Router>
       <div className='grid-container'>
@@ -31,8 +44,8 @@ function App() {
                 </li>
               </div>
             </div>
-            <a href='signin.html'>Sign-In</a>
-            <a href='cart.html'>Cart</a>
+
+            <Link to={'/cart/' + cartDataFunc(cartItems)}>Cart</Link>
           </div>
         </header>
         <main className='main'>
