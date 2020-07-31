@@ -18,6 +18,14 @@ From the client directory
 
 - `npm install`
 
+##### Before starting the app
+
+- Create a `config` folder in the root directory
+- Add a `default.json` file in `config` folder
+- Create a free MongoDb atlas account and get a`DbUrl`
+- Add `{"mongoURI": {{mongoDbURI}}}`in`default.json`file.
+- e.g`{"mongoURI": "mongdb+srv://some-url-from-mongo-site"}`
+
 ##### Starting the app
 
 From the root directory
@@ -43,7 +51,7 @@ Some minor notes:
   - Explore refactoring to PWA or using React Native for a rich mobile experience.
 
 Some minor bugs:
-If you refresh the cart on the deployed app it will throw an error however, the cart data does persist via `js-cookie`. On a local machine it should work correctly.
+If you refresh the cart on the deployed app it will throw an error however, the cart data does persist via `js-cookie`. When the app is running on a local machine it works correctly.
 
 Google Page Speeds for Desktop: 99
 Google Page Speeds for Mobile: 83
