@@ -7,13 +7,17 @@ import CartPage from './pages/CartPage';
 import CigarsPage from './pages/categories/CigarsPage';
 import LightersPage from './pages/categories/LightersPage';
 import WrappersPage from './pages/categories/WrappersPage';
-import { useSelector, useDispatch } from 'react-redux';
-import { CART_REMOVE_ITEM } from './constants/cartConstants';
+import SigninPage from './pages/SigninPage';
+// import RegisterPage from './pages/RegisterPage';
+import { useSelector } from 'react-redux';
+import { Fragment } from 'react';
 
-function App() {
+const App = () => {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-  console.log(cartItems);
 
   const cartDataFunc = (cartItems) => {
     if (cartItems.length) {
@@ -44,12 +48,19 @@ function App() {
                 </li>
               </div>
             </div>
-
-            <Link to={'/cart/' + cartDataFunc(cartItems)}>Cart</Link>
+            <Link to={'/cart/' + cartDataFunc(cartItems)}>Cart </Link>
+            {userInfo ? (
+              <Link to='/profile'>{userInfo.name}</Link>
+            ) : (
+              <Fragment>
+                <Link to={'/signin'}> Sign-In</Link>
+              </Fragment>
+            )}
           </div>
         </header>
         <main className='main'>
           <div className='content'>
+            <Route path='/signin' component={SigninPage}></Route>
             <Route path='/product/:id' component={ProductPage}></Route>
             <Route path='/' exact={true} component={HomePage}></Route>
             <Route path='/cigars' exact={true} component={CigarsPage}></Route>
@@ -70,6 +81,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
