@@ -1,4 +1,4 @@
-![havanas logo](/havanas/client/public/images/linkedin_banner_image_2.png)
+![havanas logo](./client/public/images/linkedin_banner_image_2.png)
 
 ## Quick Start
 
