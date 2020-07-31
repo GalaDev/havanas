@@ -31,7 +31,9 @@ const App = () => {
       <div className='grid-container'>
         <header className='header'>
           <div className='brand'>
-            <Link to='/'>Havanas</Link>
+            <Link to='/'>
+              <h2>Havanas</h2>
+            </Link>
           </div>
           <div className='header-links'>
             <div className='categories'>

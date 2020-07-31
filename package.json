@@ -4,7 +4,10 @@
   "description": "one stop cigar shop",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch server --exec babel-node server/server.js"
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,9 +20,11 @@
   },
   "homepage": "https://github.com/GalaDev/havanas#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "config": "^3.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.26"
   },
   "devDependencies": {
@@ -27,6 +32,7 @@
     "@babel/core": "^7.10.5",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
 }
