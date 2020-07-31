@@ -2,12 +2,18 @@ const express = require('express');
 const data = require('./data');
 const connectDB = require('../database/db');
 const bodyParser = require('body-parser');
-//routes
-const userRoute = require('./routes/userRoute');
+const path = require('path');
 
+const userRoute = require('./routes/userRoute');
 const app = express();
 app.use(bodyParser.json());
 connectDB();
+
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 app.use('/api/users', userRoute);
 
@@ -29,6 +35,7 @@ app.get('/api/products', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
 });
