@@ -9,6 +9,7 @@
 #### To run locally
 
 Clone repo
+
 From the root directory
 
 - `npm install`
