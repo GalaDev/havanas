@@ -58,8 +58,8 @@ const CartPage = (props) => {
               {cartItems.length === 0 ? (
                 <li>Cart is Empty</li>
               ) : (
-                cartItems.map((item) => (
-                  <li>
+                cartItems.map((item, i) => (
+                  <li key={i}>
                     <div className='cart-image'>
                       <img src={item.image} alt={item.name} />
                     </div>
