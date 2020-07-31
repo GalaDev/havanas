@@ -4,7 +4,10 @@
   "description": "one stop cigar shop",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch server --exec babel-node server/server.js"
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "@babel/core": "^7.10.5",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
   }
 }
